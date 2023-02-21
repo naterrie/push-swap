@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   SwapPush.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:21:49 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/21 14:17:56 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/21 18:34:34 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#ifndef SWAPPUSH_H
+# define SWAPPUSH_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -39,5 +39,13 @@ void	ss(t_push *swap);
 
 void	pa(t_push *swap);
 void	pb(t_push *swap);
+
+void	ra(t_push *swap);
+void	rb(t_push *swap);
+void	rr(t_push *swap);
+
+void	rra(t_push *swap);
+void	rrb(t_push *swap);
+void	rrr(t_push *swap);
 
 #endif

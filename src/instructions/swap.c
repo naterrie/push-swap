@@ -6,11 +6,11 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:49:15 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/21 13:55:48 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/21 16:00:52 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../pushswap.h"
+#include "../../SwapPush.h"
 
 void	sa(t_push *swap)
 {

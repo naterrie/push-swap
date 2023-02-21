@@ -6,25 +6,26 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/21 15:51:04 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/21 18:58:04 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "../SwapPush.h"
 
 void	printcolonne(t_push *swap)
 {
-	int	i = -1;
+	int	i;
 
+	i = -1;
 	while (++i < swap->lena)
 	{
-		printf("%d=%d\n",i, swap->a[i]);
+		printf("%d=%d\n", i, swap->a[i]);
 	}
 	printf("len a = %d\n", swap->lena);
 	i = -1;
 	while (++i < swap->lenb)
 	{
-		printf("%d=%d\n",i, swap->b[i]);
+		printf("%d=%d\n", i, swap->b[i]);
 	}
 	printf("len b = %d\n", swap->lenb);
 }
@@ -82,5 +83,7 @@ int	main(int argc, char **argv)
 	if (ft_tabatoi(argv, &push) == 1)
 		return (0);
 	if (checksame(&push) == 1)
-		return (free (push.a), free (push.b), 0);
+		return (0);
+	rrr(&push);
+	printcolonne(&push);
 }

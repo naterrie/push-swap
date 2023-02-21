@@ -6,11 +6,11 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:52:15 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/21 15:49:32 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/21 16:01:01 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../pushswap.h"
+#include "../../SwapPush.h"
 
 void	pa(t_push *swap)
 {
@@ -33,6 +33,7 @@ void	pa(t_push *swap)
 		size++;
 	}
 	swap->lenb -= 1;
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_push *swap)
@@ -57,4 +58,5 @@ void	pb(t_push *swap)
 		size++;
 	}
 	swap->lena -= 1;
+	write(1, "pb\n", 3);
 }

@@ -6,11 +6,11 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:33:07 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/21 11:40:07 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/21 16:00:46 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "../SwapPush.h"
 
 int	ft_atoi(const char *str, int *i)
 {
