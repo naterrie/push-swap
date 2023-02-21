@@ -4,7 +4,7 @@ HEADERS = push_swap.h.h
 OBJS =	$(SRCS:.c=.o)
 
 SRCS =	src/atoi.c \
-		src/main.c \
+		src/SwapPush.c \
 		src/instructions/push.c \
 		src/instructions/swap.c \
 

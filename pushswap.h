@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:21:49 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/20 15:01:27 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/21 11:05:55 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ typedef struct pushswap
 	int	lenb;
 }		t_push;
 
-int		ft_tabatoi(char **args, int *i);
+void	printcolonne(t_push *swap);
+
+int		checksame(t_push *swap);
+int		ft_tabatoi(char **args, t_push *swap);
+int		set_pushwap(char **args, t_push *push);
 
 void	sa(t_push *swap);
 void	sb(t_push *swap);
