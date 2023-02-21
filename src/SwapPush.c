@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/21 11:41:17 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/21 15:51:04 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@ void	printcolonne(t_push *swap)
 	{
 		printf("%d=%d\n",i, swap->a[i]);
 	}
+	printf("len a = %d\n", swap->lena);
+	i = -1;
+	while (++i < swap->lenb)
+	{
+		printf("%d=%d\n",i, swap->b[i]);
+	}
+	printf("len b = %d\n", swap->lenb);
 }
 
 int	checksame(t_push *swap)
