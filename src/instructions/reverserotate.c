@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:24:08 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/21 18:56:56 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/22 08:47:39 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,8 @@ void	rrr(t_push *swap)
 	{
 		temp = swap->a[swap->lena - 1];
 		size = swap->lena;
-		while (size > 0)
-		{
+		while (--size > 0)
 			swap->a[size] = swap->a[size - 1];
-			size--;
-		}
 		swap->a[0] = temp;
 	}
 	if (swap->lenb != 0)
