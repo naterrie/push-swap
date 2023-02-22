@@ -6,11 +6,34 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/21 18:58:04 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/22 17:07:56 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../SwapPush.h"
+
+int	checksame(t_push *swap)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i <= swap->lena)
+	{
+		j = 0;
+		while (j <= swap->lena)
+		{
+			if (swap->a[i] == swap->a[j] && i != j)
+			{
+				write(1, "Error\n", 6);
+				return (1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 void	printcolonne(t_push *swap)
 {
@@ -30,60 +53,26 @@ void	printcolonne(t_push *swap)
 	printf("len b = %d\n", swap->lenb);
 }
 
-int	checksame(t_push *swap)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i <= swap->lena)
-	{
-		j = 0;
-		while (j <= swap->lena)
-		{
-			if (swap->a[i] == swap->a[j] && i != j)
-			{
-				write(1, "ERROR\nSame character are not allowed !\n", 39);
-				return (1);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-int	set_pushwap(char **args, t_push *push)
-{
-	push->lena = 0;
-	while (args[push->lena])
-		push->lena++;
-	push->lena -= 1;
-	push->lenb = 0;
-	push->a = malloc(sizeof(int) * (push->lena));
-	if (!push->a)
-		return (1);
-	push->b = malloc(sizeof(int) * (push->lena));
-	if (!push->b)
-		return (free (push->a), 1);
-	return (0);
-}
-
 int	main(int argc, char **argv)
 {
 	t_push	push;
 
-	if (argc == 1 || argc == 2)
+	push.lena = 0;
+	push.lenb = 0;
+	if (argc == 1)
 	{
-		write(1, "ERROR\nEnter At least two numbers!\n", 34);
+		write(1, "Error\n", 6);
 		return (0);
 	}
-	if (set_pushwap(argv, &push) == 1)
-		return (0);
-	if (ft_tabatoi(argv, &push) == 1)
-		return (0);
-	if (checksame(&push) == 1)
-		return (0);
-	rrr(&push);
-	printcolonne(&push);
+	else if (argc == 2)
+	{
+		if (set_pushwap_arg(argv, &push) == 1)
+			return (0);
+	}
+	else
+	{
+		if (set_pushwap_args(argv, &push) == 1)
+			return (0);
+	}
+	return (free (push.a), free (push.b), 0);
 }

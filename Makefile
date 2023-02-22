@@ -6,7 +6,7 @@
 #    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/02/21 17:25:30 by naterrie         ###   ########lyon.fr    #
+#    Updated: 2023/02/22 14:54:38 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,14 @@ CFLAGS = -Wall -Werror -Wextra
 HEADERS = SwapPush.h
 OBJS =	$(SRCS:.c=.o)
 
-SRCS =	src/atoi.c \
-		src/SwapPush.c \
-		src/instructions/push.c \
+SRCS =	src/SwapPush.c \
+		src/setSwaparg.c \
+		src/setSwapPushargs.c \
 		src/instructions/swap.c \
+		src/instructions/push.c \
 		src/instructions/rotate.c \
 		src/instructions/reverserotate.c \
+
 
 all: $(NAME)
 $(NAME): $(OBJS)
