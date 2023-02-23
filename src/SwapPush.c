@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/23 13:05:18 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/23 14:13:25 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,5 @@ int	main(int argc, char **argv)
 	}
 	printcolonne(&push);
 	sort(&push);
-	printcolonne(&push);
 	return (free (push.a), free (push.b), 0);
 }
