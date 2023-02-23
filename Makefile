@@ -6,7 +6,7 @@
 #    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/02/23 09:59:05 by naterrie         ###   ########lyon.fr    #
+#    Updated: 2023/02/23 11:01:12 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ CFLAGS = -Wall -Werror -Wextra
 HEADERS = SwapPush.h
 OBJS =	$(SRCS:.c=.o)
 
-SRCS =	src/SwapPush.c \
+SRCS =	src/sort.c \
+		src/SwapPush.c \
 		src/setSwaparg.c \
 		src/setSwapPushargs.c \
 		src/split.c \

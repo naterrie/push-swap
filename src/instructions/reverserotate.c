@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:24:08 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/22 08:47:39 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/23 11:33:27 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	rra(t_push *swap)
 		size--;
 	}
 	swap->a[0] = temp;
-	write(1, "ra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_push *swap)
@@ -45,7 +45,7 @@ void	rrb(t_push *swap)
 		size--;
 	}
 	swap->b[0] = temp;
-	write(1, "rb\n", 3);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_push *swap)
@@ -72,5 +72,5 @@ void	rrr(t_push *swap)
 		}
 		swap->b[0] = temp;
 	}
-	write(1, "rr\n", 3);
+	write(1, "rrr\n", 4);
 }

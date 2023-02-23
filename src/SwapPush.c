@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/23 10:09:15 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/23 13:05:18 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int	checksame(t_push *swap)
 	int	j;
 
 	i = 0;
-	while (i <= swap->lena)
+	while (i < swap->lena)
 	{
 		j = 0;
-		while (j <= swap->lena)
+		while (j < swap->lena)
 		{
 			if (swap->a[i] == swap->a[j] && i != j)
 			{
@@ -74,6 +74,8 @@ int	main(int argc, char **argv)
 		if (set_pushwap_args(argv, &push) == 1)
 			return (0);
 	}
+	printcolonne(&push);
+	sort(&push);
 	printcolonne(&push);
 	return (free (push.a), free (push.b), 0);
 }
