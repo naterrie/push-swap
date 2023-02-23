@@ -6,7 +6,7 @@
 #    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/02/22 14:54:38 by naterrie         ###   ########lyon.fr    #
+#    Updated: 2023/02/23 09:59:05 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ OBJS =	$(SRCS:.c=.o)
 SRCS =	src/SwapPush.c \
 		src/setSwaparg.c \
 		src/setSwapPushargs.c \
+		src/split.c \
 		src/instructions/swap.c \
 		src/instructions/push.c \
 		src/instructions/rotate.c \

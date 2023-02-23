@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:37:21 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/22 17:48:55 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/23 10:09:05 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,37 +35,18 @@ static int	ft_atoi(const char *str, t_push *swap, int k)
 
 int	ft_tabatoi(char **args, t_push *swap)
 {
-	char	*temp;
+	char	**temp;
 	int		i;
-	int		j;
-	int		k;
 
+	(void) swap;
 	i = 0;
-	k = 0;
-	j = 0;
-	temp = malloc(sizeof(char) * 6);
-	while (args[1][i])
+	temp = ft_split(args[1], ' ');
+	while (temp[i])
 	{
-		if (args[1][i] == ' ')
-		{
-			if (args[1][i + 1] != ' ')
-			{
-				j++;
-				ft_atoi(temp, swap, j);
-				k = 0;
-			}
-			i++;
-			if (temp[6] != '\0')
-			{
-				write(1, "ERROR\n", 6);
-				return (free (temp), 1);
-			}
-		}
-		temp[k] = args[1][i];
+		ft_atoi(temp[i], swap, i);
 		i++;
-		k++;
 	}
-	return (free (temp), 0);
+	return (0);
 }
 
 static int	check_other_char(char **args)
