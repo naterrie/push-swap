@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 10:16:12 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/24 10:51:31 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/24 13:27:57 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,11 @@ static void	sort_three(t_push *swap)
 
 static void	sort_five(t_push *swap)
 {
-	int	i;
-
-	i = 0;
 	while (swap->lena != 3)
 	{
-		if (swap->a[i] == 0 || swap->a[i] == 0)
+		if (swap->a[0] == 0 || swap->a[0] == 1)
 			pb(swap);
-		i++;
+		ra(swap);
 	}
 	sort_three(swap);
 	pa(swap);
@@ -80,7 +77,7 @@ void	sort_radix(t_push *swap)
 	int	k;
 
 	i = 0;
-	k = swap->lena + swap->lenb;
+	k = swap->lena;
 	while (sort_check(swap) == 1)
 	{
 		j = 0;

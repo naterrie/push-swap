@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/24 11:12:51 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/24 14:09:46 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	sort_check(t_push *swap)
 {
 	int	i;
 
-	i = 1;
-	while (i < swap->lena)
+	i = 0;
+	while (i < swap->lena - 1)
 	{
 		if (swap->a[i] > swap->a[i + 1])
 			return (1);
@@ -71,6 +71,7 @@ int	main(int argc, char **argv)
 			return (0);
 	}
 	sort(&push);
-	printcolonne(&push);
-	return (free (push.a), free (push.b), 0);
+	free (push.a);
+	free (push.b);
+	return (0);
 }
