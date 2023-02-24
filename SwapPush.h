@@ -6,18 +6,16 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:21:49 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/24 14:06:33 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/24 16:27:02 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SWAPPUSH_H
 # define SWAPPUSH_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
-# include <stdarg.h>
+# include <stdio.h>
 
 typedef struct pushswap
 {
@@ -26,6 +24,7 @@ typedef struct pushswap
 	int	lena;
 	int	lenb;
 }		t_push;
+
 
 void	sort(t_push *swap);
 

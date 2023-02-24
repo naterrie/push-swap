@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:27:58 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/22 17:07:52 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/24 16:30:39 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_atoi(const char *str, int *i)
 	while (str[j])
 	{
 		if (*i != ((*i * 10) + (str[j] - '0')) / 10)
-			return (write(1, "ERROR\n", 6), 1);
+			return (write(STDERR_FILENO, "Error\n", 6), 1);
 		*i = (*i * 10) + (str[j++] - '0');
 	}
 	if (neg == 1)
@@ -61,9 +61,10 @@ static int	check_other_char(char **args)
 		j = 0;
 		while (args[i][j])
 		{
-			if ((args[i][j] < '0' || args[i][j] > '9') && args[i][j] != '-')
+			if ((args[i][j] < '0' || args[i][j] > '9') && \
+				args[i][j] != '-' && args[i][j] != '+')
 			{
-				write(1, "Error\n", 6);
+				write(STDERR_FILENO, "Error\n", 6);
 				return (1);
 			}
 			j++;

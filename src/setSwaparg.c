@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:37:21 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/24 13:33:23 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/24 16:30:31 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_atoi(const char *str, t_push *swap, int k)
 	while (str[j])
 	{
 		if (swap->a[k] != ((swap->a[k] * 10) + (str[j] - '0')) / 10)
-			return (write(1, "ERROR\n", 6), 1);
+			return (write(STDERR_FILENO, "ERROR\n", 6), 1);
 		swap->a[k] = (swap->a[k] * 10) + (str[j++] - '0');
 	}
 	if (neg == 1)
@@ -64,7 +64,7 @@ static int	check_other_char(char **args)
 		if ((args[1][i] < '0' || args[1][i] > '9') && \
 				args[1][i] != '-' && args[1][i] != ' ')
 		{
-			write(1, "Error\n", 6);
+			write(STDERR_FILENO, "Error\n", 6);
 			return (1);
 		}
 		i++;
