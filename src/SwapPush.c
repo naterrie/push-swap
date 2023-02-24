@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/24 14:09:46 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/24 14:19:40 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	main(int argc, char **argv)
 
 	push.lena = 0;
 	push.lenb = 0;
+	if (write (1, "", 0) == -1)
+		return (0);
 	if (argc == 1)
 	{
 		write(1, "Error\n", 6);
