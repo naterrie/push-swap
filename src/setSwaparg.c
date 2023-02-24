@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:37:21 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/23 14:01:26 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/24 09:45:33 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_atoi(const char *str, t_push *swap, int k)
 	return (0);
 }
 
-int	ft_tabatoi(char **args, t_push *swap)
+static int	ft_tabatoi(char **args, t_push *swap)
 {
 	char	**temp;
 	int		i;

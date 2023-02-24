@@ -6,13 +6,13 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 10:16:12 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/23 14:31:30 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/02/24 10:51:31 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../SwapPush.h"
 
-int	*ft_index(t_push *swap)
+static int	*ft_index(t_push *swap)
 {
 	int	*temp;
 	int	i;
@@ -37,7 +37,7 @@ int	*ft_index(t_push *swap)
 	return (free(swap->a), temp);
 }
 
-void	sort_three(t_push *swap)
+static void	sort_three(t_push *swap)
 {
 	if (swap->a[0] > swap->a[1] && swap->a[0] < swap->a[2] \
 								&& swap->a[1] < swap->a[2])
@@ -55,13 +55,62 @@ void	sort_three(t_push *swap)
 	}
 }
 
+static void	sort_five(t_push *swap)
+{
+	int	i;
+
+	i = 0;
+	while (swap->lena != 3)
+	{
+		if (swap->a[i] == 0 || swap->a[i] == 0)
+			pb(swap);
+		i++;
+	}
+	sort_three(swap);
+	pa(swap);
+	pa(swap);
+	if (swap->a[0] > swap->a[1])
+		sa(swap);
+}
+
+void	sort_radix(t_push *swap)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	i = 0;
+	k = swap->lena + swap->lenb;
+	while (sort_check(swap) == 1)
+	{
+		j = 0;
+		while (j < k)
+		{
+			if (swap->a[0] >> i & 1)
+				ra(swap);
+			else
+				pb(swap);
+			j++;
+		}
+		while (swap->lenb != 0)
+			pa(swap);
+		i++;
+	}
+}
+
 void	sort(t_push *swap)
 {
 	swap->a = ft_index(swap);
-	printcolonne(swap);
 	if (swap->lena == 3)
 	{
 		sort_three(swap);
 		return ;
 	}
+	else if (swap->lena == 5)
+	{
+		sort_five(swap);
+		return ;
+	}
+	else
+		sort_radix(swap);
 }
