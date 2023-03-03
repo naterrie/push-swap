@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:37:21 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/24 16:30:31 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/03 17:07:16 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_atoi(const char *str, t_push *swap, int k)
 	while (str[j])
 	{
 		if (swap->a[k] != ((swap->a[k] * 10) + (str[j] - '0')) / 10)
-			return (write(STDERR_FILENO, "ERROR\n", 6), 1);
+			return (write(2, "ERROR\n", 6), 1);
 		swap->a[k] = (swap->a[k] * 10) + (str[j++] - '0');
 	}
 	if (neg == 1)
@@ -62,9 +62,10 @@ static int	check_other_char(char **args)
 	while (args[1][i])
 	{
 		if ((args[1][i] < '0' || args[1][i] > '9') && \
-				args[1][i] != '-' && args[1][i] != ' ')
+				args[1][i] != '-' && args[1][i] != ' ' \
+				&& args[1][i] != '+')
 		{
-			write(STDERR_FILENO, "Error\n", 6);
+			write(2, "Error\n", 6);
 			return (1);
 		}
 		i++;
@@ -83,18 +84,21 @@ void	sizetomalloc(char **args, t_push *push)
 			i++;
 		while (args[1][i] >= '0' && args[1][i] <= '9')
 			i++;
-		push->lena++;
+		if (args[1][i + 1])
+			push->lena++;
 	}
 	push->a = malloc(sizeof(int) * push->lena);
 	if (!push->a)
 		return ;
 	push->b = malloc(sizeof(int) * push->lena);
 	if (!push->b)
-		return ;
+		return (free(push->a));
 }
 
 int	set_pushwap_arg(char **args, t_push *push)
 {
+	if (check_minusarg(args) == 1)
+		return (1);
 	if (check_other_char(args))
 		return (1);
 	sizetomalloc(args, push);

@@ -6,11 +6,17 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:56:42 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/23 10:02:17 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/03 13:50:02 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../SwapPush.h"
+
+void	sort_two(t_push *swap)
+{
+	if (swap->a[0] > swap->a[1])
+		sa(swap);
+}
 
 static size_t	count_str(char const *s, char c)
 {

@@ -6,7 +6,7 @@
 #    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/02/24 14:11:18 by naterrie         ###   ########lyon.fr    #
+#    Updated: 2023/03/03 16:35:27 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS =	src/sort.c \
 		src/setSwapPushargs.c \
 		src/split.c \
 		src/instructions.c \
+		src/checkminus.c \
 
 all: $(NAME)
 $(NAME): $(OBJS)

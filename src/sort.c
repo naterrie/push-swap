@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 10:16:12 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/24 16:40:48 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/03 13:49:05 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,11 @@ void	sort_radix(t_push *swap)
 void	sort(t_push *swap)
 {
 	swap->a = ft_index(swap);
+	if (swap->lena == 2)
+	{
+		sort_two(swap);
+		return ;
+	}
 	if (swap->lena == 3)
 	{
 		sort_three(swap);

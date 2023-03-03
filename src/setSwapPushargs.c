@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:27:58 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/24 16:30:39 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/03 17:07:49 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_atoi(const char *str, int *i)
 	while (str[j])
 	{
 		if (*i != ((*i * 10) + (str[j] - '0')) / 10)
-			return (write(STDERR_FILENO, "Error\n", 6), 1);
+			return (write(2, "Error\n", 6), 1);
 		*i = (*i * 10) + (str[j++] - '0');
 	}
 	if (neg == 1)
@@ -62,9 +62,10 @@ static int	check_other_char(char **args)
 		while (args[i][j])
 		{
 			if ((args[i][j] < '0' || args[i][j] > '9') && \
-				args[i][j] != '-' && args[i][j] != '+')
+				args[i][j] != '-' && args[i][j] != '+'
+				)
 			{
-				write(STDERR_FILENO, "Error\n", 6);
+				write(2, "Error\n", 6);
 				return (1);
 			}
 			j++;
@@ -84,20 +85,22 @@ static int	sizetomalloc(char **args, t_push *push)
 		return (1);
 	push->b = malloc(sizeof(int) * push->lena);
 	if (!push->b)
-		return (1);
+		return (free(push->a), 1);
 	return (0);
 }
 
 int	set_pushwap_args(char **args, t_push *push)
 {
+	if (check_minusargs(args) == 1)
+		return (1);
 	if (check_other_char(args))
 		return (1);
 	(void) push;
 	if (sizetomalloc(args, push) == 1)
 		return (1);
 	if (ft_tabatoi(args, push) == 1)
-		return (1);
+		return (free(push->a), free(push->b), 1);
 	if (checksame(push) == 1)
-		return (1);
+		return (free(push->a), free(push->b), 1);
 	return (0);
 }

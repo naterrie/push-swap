@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/02/24 16:31:18 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/03 17:06:13 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	checksame(t_push *swap)
 		{
 			if (swap->a[i] == swap->a[j] && i != j)
 			{
-				write(STDERR_FILENO, "Error\n", 6);
+				write(2, "Error\n", 6);
 				return (1);
 			}
 			j++;
@@ -60,17 +60,17 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 	{
 		write(1, "\n", 1);
-		return (0);
+		return (1);
 	}
 	else if (argc == 2)
 	{
 		if (set_pushwap_arg(argv, &push) == 1)
-			return (0);
+			return (1);
 	}
 	else
 	{
 		if (set_pushwap_args(argv, &push) == 1)
-			return (0);
+			return (1);
 	}
 	sort(&push);
 	free (push.a);
