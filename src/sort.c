@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 10:16:12 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/03 13:49:05 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/06 12:35:42 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	*ft_index(t_push *swap)
 	return (free(swap->a), temp);
 }
 
-static void	sort_three(t_push *swap)
+void	sort_three(t_push *swap)
 {
 	if (swap->a[0] > swap->a[1] && swap->a[0] < swap->a[2] \
 								&& swap->a[1] < swap->a[2])
@@ -109,6 +109,11 @@ void	sort(t_push *swap)
 	if (swap->lena == 3)
 	{
 		sort_three(swap);
+		return ;
+	}
+	else if (swap->lena == 4)
+	{
+		sort_four(swap);
 		return ;
 	}
 	else if (swap->lena == 5)

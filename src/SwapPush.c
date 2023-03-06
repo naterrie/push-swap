@@ -6,11 +6,25 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/03 17:06:13 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/06 12:39:17 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../SwapPush.h"
+
+void	sort_four(t_push *swap)
+{
+	while (swap->lena != 3)
+	{
+		if (swap->a[0] == 0)
+			pb(swap);
+		rra(swap);
+	}
+	sort_three(swap);
+	pa(swap);
+	if (swap->a[0] > swap->a[1])
+		sa(swap);
+}
 
 int	sort_check(t_push *swap)
 {
