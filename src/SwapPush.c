@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   SwapPush.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/06 12:39:17 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/07 23:48:41 by adenumy          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	checksame(t_push *swap)
 		j = 0;
 		while (j < swap->lena)
 		{
-			if (swap->a[i] == swap->a[j] && i != j)
+			if (swap->a[i] == swap->a[j] && i != j) // ici ça casse
 			{
 				write(2, "Error\n", 6);
 				return (1);
@@ -87,6 +87,7 @@ int	main(int argc, char **argv)
 			return (1);
 	}
 	sort(&push);
+	// printcolonnes(&push);
 	free (push.a);
 	free (push.b);
 	return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setSwaparg.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:37:21 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/03 17:07:16 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/07 23:47:48 by adenumy          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_atoi(const char *str, t_push *swap, int k)
 		j++;
 	while (str[j])
 	{
-		if (swap->a[k] != ((swap->a[k] * 10) + (str[j] - '0')) / 10)
+		if (swap->a[k] != ((swap->a[k] * 10) + (str[j] - '0')) / 10) // ici c'est pété
 			return (write(2, "ERROR\n", 6), 1);
 		swap->a[k] = (swap->a[k] * 10) + (str[j++] - '0');
 	}
@@ -45,12 +45,15 @@ static int	ft_tabatoi(char **args, t_push *swap)
 	(void) swap;
 	i = 0;
 	temp = ft_split(args[1], ' ');
+	if (temp == NULL)
+		return (1);
 	while (temp[i])
 	{
 		if (ft_atoi(temp[i], swap, i) == 1)
 			return (1);
 		i++;
 	}
+	free_str(temp, i);
 	return (0);
 }
 
@@ -73,7 +76,7 @@ static int	check_other_char(char **args)
 	return (0);
 }
 
-void	sizetomalloc(char **args, t_push *push)
+static int	sizetomalloc(char **args, t_push *push)
 {
 	int	i;
 
@@ -89,10 +92,11 @@ void	sizetomalloc(char **args, t_push *push)
 	}
 	push->a = malloc(sizeof(int) * push->lena);
 	if (!push->a)
-		return ;
+		return (1);
 	push->b = malloc(sizeof(int) * push->lena);
 	if (!push->b)
-		return (free(push->a));
+		return (free(push->a), 1);
+	return (0);
 }
 
 int	set_pushwap_arg(char **args, t_push *push)
@@ -101,10 +105,11 @@ int	set_pushwap_arg(char **args, t_push *push)
 		return (1);
 	if (check_other_char(args))
 		return (1);
-	sizetomalloc(args, push);
+	if (sizetomalloc(args, push) == 1)
+		return (1);
 	if (ft_tabatoi(args, push) == 1)
-		return (1);
+		return (free(push->a), free(push->b), 1);
 	if (checksame(push) == 1)
-		return (1);
+		return (free(push->a), free(push->b), 1);
 	return (0);
 }

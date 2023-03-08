@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 10:16:12 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/06 12:35:42 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/07 23:49:49 by adenumy          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int	*ft_index(t_push *swap)
 	{
 		j = 0;
 		k = 0;
-		while (j < swap->lena)
+		while (j < swap->lena - 1)
 		{
-			if (swap->a[j] < swap->a[i])
+			if (swap->a[j] < swap->a[i]) // Et ici aussi
 				k++;
 			j++;
 		}

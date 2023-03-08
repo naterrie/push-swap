@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:56:42 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/03 13:50:02 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/07 00:28:21 by adenumy          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,18 @@ static const char	*dup_until_c(char **dest, char const *src, char c)
 	return (src);
 }
 
-static void	free_str(char ***str, size_t len)
+void	free_str(char **str, int len)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < len)
 	{
-		free((*str)[i]);
+		free((str)[i]);
 		i++;
 	}
-	free(*str);
-	*str = NULL;
+	free(str);
+	str = NULL;
 }
 
 char	**ft_split(char const *s, char c)
@@ -86,21 +86,20 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	nbstr = count_str(s, c);
-	str = (char **)malloc(sizeof(char *) * (nbstr + 1));
-	if (str)
+	str = malloc(sizeof(char *) * (nbstr + 1));
+	if (!str)
+		return NULL;
+	str[nbstr] = NULL;
+	i = 0;
+	while (i < nbstr)
 	{
-		str[nbstr] = NULL;
-		i = 0;
-		while (i < nbstr)
+		s = dup_until_c(str + i, s, c);
+		if (s == NULL)
 		{
-			s = dup_until_c(str + i, s, c);
-			if (s == NULL)
-			{
-				free_str(&str, i);
-				return (str);
-			}
-			i++;
+			free_str(str, i);
+			return (str);
 		}
+		i++;
 	}
 	return (str);
 }

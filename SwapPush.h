@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   SwapPush.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:21:49 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/06 12:39:38 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/07 23:47:53 by adenumy          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 typedef struct pushswap
 {
@@ -28,6 +29,7 @@ void	sort(t_push *swap);
 
 char	**ft_split(char const *s, char c);
 int		checksame(t_push *swap);
+void	free_str(char **str, int len);
 
 int		sort_check(t_push *swap);
 void	sort_two(t_push *swap);
@@ -47,5 +49,7 @@ void	pb(t_push *swap);
 void	ra(t_push *swap);
 
 void	rra(t_push *swap);
+
+void	printcolonnes(t_push *swap);
 
 #endif

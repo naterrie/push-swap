@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setSwapPushargs.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:27:58 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/03 17:07:49 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/07 00:31:34 by adenumy          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ int	set_pushwap_args(char **args, t_push *push)
 		return (1);
 	if (check_other_char(args))
 		return (1);
-	(void) push;
 	if (sizetomalloc(args, push) == 1)
 		return (1);
 	if (ft_tabatoi(args, push) == 1)
