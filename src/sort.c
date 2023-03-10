@@ -6,7 +6,7 @@
 /*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 10:16:12 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/07 23:49:49 by adenumy          ###   ########lyon.fr   */
+/*   Updated: 2023/03/09 11:26:00 by adenumy          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	*ft_index(t_push *swap)
 		k = 0;
 		while (j < swap->lena - 1)
 		{
-			if (swap->a[j] < swap->a[i]) // Et ici aussi
+			if (swap->a[j] < swap->a[i]) // Et ici aussi au premier passage
 				k++;
 			j++;
 		}

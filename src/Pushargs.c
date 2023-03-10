@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   setSwapPushargs.c                                  :+:      :+:    :+:   */
+/*   Pushargs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:27:58 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/07 00:31:34 by adenumy          ###   ########lyon.fr   */
+/*   Updated: 2023/03/09 11:25:07 by adenumy          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_atoi(const char *str, int *i)
 		j++;
 	while (str[j])
 	{
-		if (*i != ((*i * 10) + (str[j] - '0')) / 10)
+		if (*i != ((*i * 10) + (str[j] - '0')) / 10) // casse au premier passage
 			return (write(2, "Error\n", 6), 1);
 		*i = (*i * 10) + (str[j++] - '0');
 	}

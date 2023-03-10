@@ -6,7 +6,7 @@
 /*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:37:21 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/07 23:47:48 by adenumy          ###   ########lyon.fr   */
+/*   Updated: 2023/03/09 11:22:07 by adenumy          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ static int	ft_atoi(const char *str, t_push *swap, int k)
 		j++;
 	while (str[j])
 	{
-		if (swap->a[k] != ((swap->a[k] * 10) + (str[j] - '0')) / 10) // ici c'est pété
+		printf("swap->a[k] = %d, str[j] = %c\n",swap->a[k] ,str[j]);
+		if (swap->a[k] != ((swap->a[k] * 10) + (str[j] - '0')) / 10) // ici c'est pété au premier passage 
 			return (write(2, "ERROR\n", 6), 1);
 		swap->a[k] = (swap->a[k] * 10) + (str[j++] - '0');
 	}

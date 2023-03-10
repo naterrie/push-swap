@@ -6,7 +6,7 @@
 /*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/07 23:48:41 by adenumy          ###   ########lyon.fr   */
+/*   Updated: 2023/03/09 11:20:04 by adenumy          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	checksame(t_push *swap)
 		j = 0;
 		while (j < swap->lena)
 		{
-			if (swap->a[i] == swap->a[j] && i != j) // ici ça casse
+			if (swap->a[i] == swap->a[j] && i != j) // ici ça casse au premier passage
 			{
 				write(2, "Error\n", 6);
 				return (1);
