@@ -6,11 +6,10 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/10 17:27:32 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/10 17:58:12 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "../SwapPush.h"
 
 void	sort_four(t_push *swap)

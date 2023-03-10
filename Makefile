@@ -6,12 +6,12 @@
 #    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/03/10 17:26:33 by naterrie         ###   ########lyon.fr    #
+#    Updated: 2023/03/10 18:04:03 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	push_swap
-CFLAGS = -Wall -Werror -Wextra #-g3 -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 HEADERS = SwapPush.h
 OBJS =	$(addprefix $(DIR_OBJS)/, $(SRCS:.c=.o))
 DIR_SRCS := src
@@ -30,8 +30,7 @@ SRCS =	sort.c \
 		Pushargs.c \
 		split.c \
 		instructions.c \
-		checkminus.c \
-		test.c
+		checkminus.c
 
 all: $(NAME)
 	echo "$(GREEN)✅ Push swap compilated !"
@@ -43,7 +42,7 @@ $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c $(HEADERS)
 	echo "$(GREEN)⏳ Making $(NAME)"
 	printf "$(BLEU) ⮡ Making $(RESET)$@$(RED)"
 	gcc $(CFLAGS) -c $< -o $@ -I.
-	sleep 0.1
+	sleep 0.05
 	printf "$(ERASE)"
 
 $(DIR_OBJS):
