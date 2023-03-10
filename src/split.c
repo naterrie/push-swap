@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:56:42 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/07 00:28:21 by adenumy          ###   ########lyon.fr   */
+/*   Updated: 2023/03/10 17:28:36 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 	nbstr = count_str(s, c);
 	str = malloc(sizeof(char *) * (nbstr + 1));
 	if (!str)
-		return NULL;
+		return (NULL);
 	str[nbstr] = NULL;
 	i = 0;
 	while (i < nbstr)

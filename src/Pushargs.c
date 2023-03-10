@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Pushargs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:27:58 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/09 11:25:07 by adenumy          ###   ########lyon.fr   */
+/*   Updated: 2023/03/10 17:27:47 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_atoi(const char *str, int *i)
 		j++;
 	while (str[j])
 	{
-		if (*i != ((*i * 10) + (str[j] - '0')) / 10) // casse au premier passage
+		if (*i != ((*i * 10) + (str[j] - '0')) / 10)
 			return (write(2, "Error\n", 6), 1);
 		*i = (*i * 10) + (str[j++] - '0');
 	}
@@ -86,6 +86,7 @@ static int	sizetomalloc(char **args, t_push *push)
 	push->b = malloc(sizeof(int) * push->lena);
 	if (!push->b)
 		return (free(push->a), 1);
+	set_to_zero(push);
 	return (0);
 }
 

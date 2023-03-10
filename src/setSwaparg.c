@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setSwaparg.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:37:21 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/09 11:22:07 by adenumy          ###   ########lyon.fr   */
+/*   Updated: 2023/03/10 17:27:59 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ static int	ft_atoi(const char *str, t_push *swap, int k)
 		j++;
 	while (str[j])
 	{
-		printf("swap->a[k] = %d, str[j] = %c\n",swap->a[k] ,str[j]);
-		if (swap->a[k] != ((swap->a[k] * 10) + (str[j] - '0')) / 10) // ici c'est pété au premier passage 
+		if (swap->a[k] != ((swap->a[k] * 10) + (str[j] - '0')) / 10)
 			return (write(2, "ERROR\n", 6), 1);
 		swap->a[k] = (swap->a[k] * 10) + (str[j++] - '0');
 	}
@@ -97,6 +96,7 @@ static int	sizetomalloc(char **args, t_push *push)
 	push->b = malloc(sizeof(int) * push->lena);
 	if (!push->b)
 		return (free(push->a), 1);
+	set_to_zero(push);
 	return (0);
 }
 

@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   SwapPush.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/09 11:20:04 by adenumy          ###   ########lyon.fr   */
+/*   Updated: 2023/03/10 17:27:32 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "../SwapPush.h"
 
 void	sort_four(t_push *swap)
@@ -51,7 +52,7 @@ int	checksame(t_push *swap)
 		j = 0;
 		while (j < swap->lena)
 		{
-			if (swap->a[i] == swap->a[j] && i != j) // ici ça casse au premier passage
+			if (swap->a[i] == swap->a[j] && i != j)
 			{
 				write(2, "Error\n", 6);
 				return (1);
@@ -87,7 +88,6 @@ int	main(int argc, char **argv)
 			return (1);
 	}
 	sort(&push);
-	// printcolonnes(&push);
 	free (push.a);
 	free (push.b);
 	return (0);

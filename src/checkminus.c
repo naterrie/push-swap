@@ -6,11 +6,29 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 16:06:59 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/03 16:47:12 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/10 17:25:24 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../SwapPush.h"
+
+void	set_to_zero(t_push *swap)
+{
+	int	i;
+
+	i = 0;
+	while (i < swap->lena)
+	{
+		swap->a[i] = 0;
+		i++;
+	}
+	i = 0;
+	while (i < swap->lena)
+	{
+		swap->b[i] = 0;
+		i++;
+	}
+}
 
 int	check_minusargs(char **args)
 {

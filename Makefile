@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adenumy <adenumy@student.42lyon.fr>        +#+  +:+       +#+         #
+#    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/03/07 21:23:00 by adenumy          ###   ########lyon.fr    #
+#    Updated: 2023/03/10 17:26:33 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	push_swap
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra #-g3 -fsanitize=address
 HEADERS = SwapPush.h
 OBJS =	$(addprefix $(DIR_OBJS)/, $(SRCS:.c=.o))
 DIR_SRCS := src
@@ -49,7 +49,7 @@ $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c $(HEADERS)
 $(DIR_OBJS):
 	mkdir -p $@
 
-ok: all clean
+ok: re clean
 
 clean:
 	echo "$(PURPLE)🧹Removing .o files !"
