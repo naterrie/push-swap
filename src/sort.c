@@ -6,11 +6,11 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 10:16:12 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/10 17:27:38 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/13 14:18:45 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../SwapPush.h"
+#include "../swap_push.h"
 
 static int	*ft_index(t_push *swap)
 {
@@ -25,7 +25,7 @@ static int	*ft_index(t_push *swap)
 	{
 		j = 0;
 		k = 0;
-		while (j < swap->lena - 1)
+		while (j < swap->lena)
 		{
 			if (swap->a[j] < swap->a[i])
 				k++;

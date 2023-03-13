@@ -6,13 +6,13 @@
 #    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/03/10 18:04:03 by naterrie         ###   ########lyon.fr    #
+#    Updated: 2023/03/13 14:19:03 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	push_swap
 CFLAGS = -Wall -Werror -Wextra
-HEADERS = SwapPush.h
+HEADERS = swap_push.h
 OBJS =	$(addprefix $(DIR_OBJS)/, $(SRCS:.c=.o))
 DIR_SRCS := src
 DIR_OBJS := .objs
@@ -25,9 +25,9 @@ RESET := \033[0m
 ERASE := \033[2K\033[1A\r
 
 SRCS =	sort.c \
-		SwapPush.c \
-		setSwaparg.c \
-		Pushargs.c \
+		swap_push.c \
+		set_arg.c \
+		set_args.c \
 		split.c \
 		instructions.c \
 		checkminus.c

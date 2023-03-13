@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   setSwaparg.c                                       :+:      :+:    :+:   */
+/*   set_arg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 13:37:21 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/10 17:27:59 by naterrie         ###   ########lyon.fr   */
+/*   Created: 2023/02/22 10:27:58 by naterrie          #+#    #+#             */
+/*   Updated: 2023/03/13 14:18:52 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../SwapPush.h"
+#include "../swap_push.h"
 
-static int	ft_atoi(const char *str, t_push *swap, int k)
+static int	ft_atoi(const char *str, int *i)
 {
 	long	j;
 	int		neg;
@@ -28,48 +28,47 @@ static int	ft_atoi(const char *str, t_push *swap, int k)
 		j++;
 	while (str[j])
 	{
-		if (swap->a[k] != ((swap->a[k] * 10) + (str[j] - '0')) / 10)
-			return (write(2, "ERROR\n", 6), 1);
-		swap->a[k] = (swap->a[k] * 10) + (str[j++] - '0');
+		if (*i != ((*i * 10) + (str[j] - '0')) / 10)
+			return (write(2, "Error\n", 6), 1);
+		*i = (*i * 10) + (str[j++] - '0');
 	}
 	if (neg == 1)
-		swap->a[k] *= -1;
+		*i *= -1;
 	return (0);
 }
 
 static int	ft_tabatoi(char **args, t_push *swap)
 {
-	char	**temp;
-	int		i;
+	int	j;
 
-	(void) swap;
-	i = 0;
-	temp = ft_split(args[1], ' ');
-	if (temp == NULL)
-		return (1);
-	while (temp[i])
+	j = 0;
+	while (args[++j])
 	{
-		if (ft_atoi(temp[i], swap, i) == 1)
+		if (ft_atoi(args[j], &swap->a[j - 1]) == 1)
 			return (1);
-		i++;
 	}
-	free_str(temp, i);
 	return (0);
 }
 
 static int	check_other_char(char **args)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (args[1][i])
+	i = 1;
+	while (args[i])
 	{
-		if ((args[1][i] < '0' || args[1][i] > '9') && \
-				args[1][i] != '-' && args[1][i] != ' ' \
-				&& args[1][i] != '+')
+		j = 0;
+		while (args[i][j])
 		{
-			write(2, "Error\n", 6);
-			return (1);
+			if ((args[i][j] < '0' || args[i][j] > '9') && \
+				args[i][j] != '-' && args[i][j] != '+'
+				)
+			{
+				write(2, "Error\n", 6);
+				return (1);
+			}
+			j++;
 		}
 		i++;
 	}
@@ -78,18 +77,9 @@ static int	check_other_char(char **args)
 
 static int	sizetomalloc(char **args, t_push *push)
 {
-	int	i;
-
-	i = 0;
-	while (args[1][i])
-	{
-		while (args[1][i] == ' ' || args[1][i] == '-' || args[1][i] == '+')
-			i++;
-		while (args[1][i] >= '0' && args[1][i] <= '9')
-			i++;
-		if (args[1][i + 1])
-			push->lena++;
-	}
+	while (args[++push->lena])
+		;
+	push->lena--;
 	push->a = malloc(sizeof(int) * push->lena);
 	if (!push->a)
 		return (1);
@@ -100,9 +90,9 @@ static int	sizetomalloc(char **args, t_push *push)
 	return (0);
 }
 
-int	set_pushwap_arg(char **args, t_push *push)
+int	set_pushwap_args(char **args, t_push *push)
 {
-	if (check_minusarg(args) == 1)
+	if (check_minusargs(args) == 1)
 		return (1);
 	if (check_other_char(args))
 		return (1);
