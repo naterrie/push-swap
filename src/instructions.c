@@ -6,11 +6,12 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:55:25 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/13 14:18:55 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/20 14:03:33 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../swap_push.h"
+#include <stdio.h>
 
 void	ra(t_push *swap)
 {
@@ -21,7 +22,7 @@ void	ra(t_push *swap)
 		return ;
 	temp = swap->a[0];
 	size = 0;
-	while (size < swap->lena)
+	while (size < swap->lena - 1)
 	{
 		swap->a[size] = swap->a[size + 1];
 		size++;
@@ -38,7 +39,7 @@ void	rra(t_push *swap)
 	temp = swap->a[swap->lena - 1];
 	if (swap->lena == 0)
 		return ;
-	size = swap->lena;
+	size = swap->lena - 1;
 	while (size > 0)
 	{
 		swap->a[size] = swap->a[size - 1];
@@ -75,7 +76,7 @@ void	pa(t_push *swap)
 	swap->a[0] = swap->b[0];
 	swap->lena += 1;
 	size = 0;
-	while (size < swap->lenb)
+	while (size < swap->lenb - 1)
 	{
 		swap->b[size] = swap->b[size + 1];
 		size++;
@@ -100,7 +101,7 @@ void	pb(t_push *swap)
 	swap->b[0] = swap->a[0];
 	swap->lenb += 1;
 	size = 0;
-	while (size < swap->lena)
+	while (size < swap->lena - 1)
 	{
 		swap->a[size] = swap->a[size + 1];
 		size++;

@@ -1,6 +1,8 @@
 {
 	"files.associations": {
-		"swappush.h": "c"
+		"swappush.h": "c",
+		"stdio.h": "c",
+		"concepts": "c"
 	},
 	"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
 }

@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:21:49 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/13 14:18:23 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/20 14:07:44 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,5 @@ void	pb(t_push *swap);
 void	ra(t_push *swap);
 
 void	rra(t_push *swap);
-
-void printcolonnes(t_push *swap);
 
 #endif

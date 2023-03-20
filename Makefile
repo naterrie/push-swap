@@ -6,12 +6,12 @@
 #    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/03/13 14:19:03 by naterrie         ###   ########lyon.fr    #
+#    Updated: 2023/03/20 14:07:10 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	push_swap
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra #-fsanitize=address
 HEADERS = swap_push.h
 OBJS =	$(addprefix $(DIR_OBJS)/, $(SRCS:.c=.o))
 DIR_SRCS := src
@@ -30,7 +30,7 @@ SRCS =	sort.c \
 		set_args.c \
 		split.c \
 		instructions.c \
-		checkminus.c
+		checkminus.c \
 
 all: $(NAME)
 	echo "$(GREEN)✅ Push swap compilated !"
@@ -61,6 +61,6 @@ fclean: clean
 re: fclean $(NAME)
 	echo "$(GREEN)✅ Push swap recompilated !"
 
-.PHONY: clean fclean re all
+.PHONY: clean fclean re all ok
 
 .SILENT:

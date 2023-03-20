@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/13 14:18:30 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/20 14:04:46 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 void	sort_four(t_push *swap)
 {
-	while (swap->lena != 3)
+	if (sort_check(swap) == 1)
 	{
-		if (swap->a[0] == 0)
-			pb(swap);
-		rra(swap);
+		while (swap->lena != 3)
+		{
+			if (swap->a[0] == 0)
+				pb(swap);
+			rra(swap);
+		}
+		sort_three(swap);
+		pa(swap);
+		if (swap->a[0] > swap->a[1])
+			sa(swap);
 	}
-	sort_three(swap);
-	pa(swap);
-	if (swap->a[0] > swap->a[1])
-		sa(swap);
 }
 
 int	sort_check(t_push *swap)
