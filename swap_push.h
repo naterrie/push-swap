@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:21:49 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/20 14:07:44 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/20 17:08:52 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	sort(t_push *swap);
 
 char	**ft_split(char const *s, char c);
 int		checksame(t_push *swap);
-void	free_str(char **str, int len);
+void	free_str(char **str);
 
 int		sort_check(t_push *swap);
 void	sort_two(t_push *swap);

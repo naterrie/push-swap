@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:56:42 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/13 14:18:39 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/20 17:20:00 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ static const char	*dup_until_c(char **dest, char const *src, char c)
 	return (src);
 }
 
-void	free_str(char **str, int len)
+void	free_str(char **str)
 {
 	int	i;
 
 	i = 0;
-	while (i < len)
+	while (str[i])
 	{
 		free((str)[i]);
 		i++;
@@ -96,7 +96,7 @@ char	**ft_split(char const *s, char c)
 		s = dup_until_c(str + i, s, c);
 		if (s == NULL)
 		{
-			free_str(str, i);
+			free_str(str);
 			return (str);
 		}
 		i++;

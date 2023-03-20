@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_args.c                                         :+:      :+:    :+:   */
+/*   set_multiple_args.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:37:21 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/13 14:18:50 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/20 17:10:29 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_atoi(const char *str, t_push *swap, int k)
 	while (str[j])
 	{
 		if (swap->a[k] != ((swap->a[k] * 10) + (str[j] - '0')) / 10)
-			return (write(2, "ERROR\n", 6), 1);
+			return (write(2, "Error\n", 6), 1);
 		swap->a[k] = (swap->a[k] * 10) + (str[j++] - '0');
 	}
 	if (neg == 1)
@@ -50,10 +50,15 @@ static int	ft_tabatoi(char **args, t_push *swap)
 	while (temp[i])
 	{
 		if (ft_atoi(temp[i], swap, i) == 1)
+		{
+			while (i >= 0)
+				free(temp[i--]);
+			free(temp);
 			return (1);
+		}
 		i++;
 	}
-	free_str(temp, i);
+	free_str(temp);
 	return (0);
 }
 

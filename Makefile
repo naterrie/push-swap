@@ -6,12 +6,12 @@
 #    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/03/20 14:07:10 by naterrie         ###   ########lyon.fr    #
+#    Updated: 2023/03/20 17:11:25 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	push_swap
-CFLAGS = -Wall -Werror -Wextra #-fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 HEADERS = swap_push.h
 OBJS =	$(addprefix $(DIR_OBJS)/, $(SRCS:.c=.o))
 DIR_SRCS := src
@@ -27,10 +27,10 @@ ERASE := \033[2K\033[1A\r
 SRCS =	sort.c \
 		swap_push.c \
 		set_arg.c \
-		set_args.c \
+		set_multiple_args.c \
 		split.c \
 		instructions.c \
-		checkminus.c \
+		checkminus.c
 
 all: $(NAME)
 	echo "$(GREEN)✅ Push swap compilated !"
