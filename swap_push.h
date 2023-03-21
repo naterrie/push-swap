@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:21:49 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/20 17:08:52 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/21 16:25:28 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ void	sort_two(t_push *swap);
 void	sort_three(t_push *swap);
 void	sort_four(t_push *swap);
 
-int		set_pushwap_args(char **args, t_push *push);
+int		set_pushwap_arg(char **args, t_push *push);
 int		check_minusargs(char **args);
 void	set_to_zero(t_push *swap);
 
-int		set_pushwap_arg(char **args, t_push *push);
+int		set_multiple_args(char **args, t_push *push);
 int		check_minusarg(char **args);
 
 void	sa(t_push *swap);
@@ -49,5 +49,10 @@ void	pb(t_push *swap);
 void	ra(t_push *swap);
 
 void	rra(t_push *swap);
+
+
+
+void 	 	 	 	 	printout(t_push	*push);
+
 
 #endif

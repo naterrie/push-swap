@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/20 17:10:56 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/21 15:44:34 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		if (set_pushwap_args(argv, &push) == 1)
+		if (set_multiple_args(argv, &push) == 1)
 			return (1);
 	}
 	sort(&push);

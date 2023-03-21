@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:56:42 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/20 17:20:00 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/21 16:25:16 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	sort_two(t_push *swap)
 		sa(swap);
 }
 
-static size_t	count_str(char const *s, char c)
+static int	count_str(char const *s, char c)
 {
-	size_t	nbstr;
-	size_t	i;
+	int	nbstr;
+	int	i;
 
 	nbstr = 0;
 	i = 0;
@@ -41,8 +41,8 @@ static size_t	count_str(char const *s, char c)
 
 static const char	*dup_until_c(char **dest, char const *src, char c)
 {
-	size_t	len;
-	size_t	i;
+	int	len;
+	int	i;
 
 	while (*src == c)
 		src++;
@@ -70,7 +70,7 @@ void	free_str(char **str)
 	i = 0;
 	while (str[i])
 	{
-		free((str)[i]);
+		free(str[i]);
 		i++;
 	}
 	free(str);
@@ -80,9 +80,10 @@ void	free_str(char **str)
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
-	size_t	i;
-	size_t	nbstr;
+	int		nbstr;
+	int		i;
 
+	i = 0;
 	if (!s)
 		return (NULL);
 	nbstr = count_str(s, c);

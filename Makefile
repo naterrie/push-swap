@@ -6,7 +6,7 @@
 #    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/03/20 17:11:25 by naterrie         ###   ########lyon.fr    #
+#    Updated: 2023/03/21 15:25:24 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRCS =	sort.c \
 		set_multiple_args.c \
 		split.c \
 		instructions.c \
-		checkminus.c
+		checkminus.c \
+		test.c
 
 all: $(NAME)
 	echo "$(GREEN)✅ Push swap compilated !"
@@ -48,8 +49,6 @@ $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c $(HEADERS)
 $(DIR_OBJS):
 	mkdir -p $@
 
-ok: re clean
-
 clean:
 	echo "$(PURPLE)🧹Removing .o files !"
 	rm -rf $(DIR_OBJS)
@@ -61,6 +60,6 @@ fclean: clean
 re: fclean $(NAME)
 	echo "$(GREEN)✅ Push swap recompilated !"
 
-.PHONY: clean fclean re all ok
+.PHONY: clean fclean re all
 
 .SILENT:
