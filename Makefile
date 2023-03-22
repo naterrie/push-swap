@@ -6,7 +6,7 @@
 #    By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 13:42:54 by naterrie          #+#    #+#              #
-#    Updated: 2023/03/21 15:25:24 by naterrie         ###   ########lyon.fr    #
+#    Updated: 2023/03/22 13:48:34 by naterrie         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,6 @@ SRCS =	sort.c \
 		split.c \
 		instructions.c \
 		checkminus.c \
-		test.c
 
 all: $(NAME)
 	echo "$(GREEN)✅ Push swap compilated !"

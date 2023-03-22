@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:37:21 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/21 17:08:20 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/22 13:54:55 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ static int	sizetomalloc(char **args, t_push *push)
 			i++;
 		while (args[1][i] >= '0' && args[1][i] <= '9')
 			i++;
-		printf("ici\n");
 		if (args[1][i + 1] && args[1][i + 1] != '\0')
 			push->lena++;
 	}

@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:27:58 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/21 16:07:58 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/03/22 15:57:29 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,21 @@ static int	ft_atoi(const char *str, int *i)
 
 	j = 0;
 	neg = -1;
-	if (str[j] != '\0' && str[j] == '-')
+	if (str[j] != '\0' && (str[j] == '-' || str[j] == '+'))
 	{
-		neg *= -1;
+		if (str[j] == '-')
+			neg *= -1;
 		j++;
 	}
-	else if (str[j] == '+')
+	while (str[j] == ' ')
 		j++;
 	while (str[j])
 	{
 		if (*i != ((*i * 10) + (str[j] - '0')) / 10)
 			return (write(2, "Error\n", 6), 1);
 		*i = (*i * 10) + (str[j++] - '0');
+		while (str[j] == ' ' && str[j])
+			j++;
 	}
 	if (neg == 1)
 		*i *= -1;
@@ -62,8 +65,7 @@ static int	check_other_char(char **args)
 		while (args[i][j])
 		{
 			if ((args[i][j] < '0' || args[i][j] > '9') && \
-				args[i][j] != '-' && args[i][j] != '+'
-				)
+				args[i][j] != '-' && args[i][j] != '+' && args[i][j] != ' ')
 			{
 				write(2, "Error\n", 6);
 				return (1);
