@@ -6,7 +6,7 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 10:16:12 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/21 15:44:39 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/04/18 17:20:16 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	*ft_index(t_push *swap)
 
 	i = 0;
 	temp = malloc(sizeof(int) * swap->lena);
+	if (!temp)
+		ft_exit(swap);
 	while (i < swap->lena)
 	{
 		j = 0;

@@ -6,11 +6,18 @@
 /*   By: naterrie <naterrie@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:52:43 by naterrie          #+#    #+#             */
-/*   Updated: 2023/03/21 15:44:34 by naterrie         ###   ########lyon.fr   */
+/*   Updated: 2023/04/18 17:19:30 by naterrie         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../swap_push.h"
+
+void	ft_exit(t_push *swap)
+{
+	free(swap->a);
+	free(swap->b);
+	exit(1);
+}
 
 void	sort_four(t_push *swap)
 {
